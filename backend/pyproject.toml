@@ -1,0 +1,45 @@
+[project]
+name = "finopsai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.6",
+    "psycopg[binary]>=3.3.9",
+    "pydantic-settings>=2.16.3",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+finopsai = "finopsai:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E4",  # Import and syntax-related pycodestyle errors
+    "E7",  # Statement formatting
+    "E9",  # Runtime/syntax-related errors
+    "F",   # Pyflakes
+    "I",   # Import sorting
+    "B",   # Bugbear: likely bugs and design issues
+    "UP",  # Modern Python syntax
+    "S",   # Bandit-inspired security checks
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]

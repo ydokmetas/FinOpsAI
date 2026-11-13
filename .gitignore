@@ -1,0 +1,23 @@
+# Environment variables (keep example files tracked)
+.env
+.env.*
+!.env.example
+
+# Python environments and bytecode
+.venv/
+__pycache__/
+*.py[cod]
+
+# Test and lint caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Node.js dependencies
+node_modules/
+
+# Local editor and macOS files
+.vscode/
+.DS_Store
